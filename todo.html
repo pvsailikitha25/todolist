@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BetterFocus Dashboard</title>
+    <link rel="stylesheet" href="todo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        
+        <aside class="sidebar">
+            <h1 class="logo"><i class="fas fa-rocket"></i> BetterFocus</h1>
+            <nav class="project-nav">
+                <h3>Projects</h3>
+                <ul id="project-list">
+                    </ul>
+                <button id="add-project-btn"><i class="fas fa-plus-circle"></i> New Project</button>
+            </nav>
+            <div class="user-profile">
+                <p>Hello, Pristia!</p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h2><span id="current-project-title">All Tasks</span> Overview</h2>
+                <button id="theme-toggle" class="theme-toggle-btn"><i class="fas fa-moon"></i></button>
+            </header>
+            
+            <section class="metrics-grid">
+                <div class="metric-card completed-metric">
+                    <h3>Completion Rate</h3>
+                    <p id="completion-rate">0%</p>
+                    <i class="fas fa-check-circle"></i>
+                    <div class="progress-bar-container">
+                        <div id="progress-bar" class="progress-bar"></div>
+                    </div>
+                </div>
+                <div class="metric-card active-metric">
+                    <h3>Tasks Active</h3>
+                    <p id="active-count">0</p>
+                    <i class="fas fa-hourglass-half"></i>
+                </div>
+                <div class="metric-card overdue-metric">
+                    <h3>Overdue</h3>
+                    <p id="overdue-count">0</p>
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+            </section>
+
+            <section class="task-management">
+                <h3>Task List</h3>
+                <div class="task-input-bar">
+                    <input type="date" id="new-task-date" title="Due Date">
+                    
+                    <input type="text" id="new-task-input" placeholder="Add a new task: text #project !priority">
+                    
+                    <button onclick="addTask()"><i class="fas fa-plus"></i></button>
+                </div>
+                <div class="filter-controls">
+                    <button id="filter-all" class="active">All</button>
+                    <button id="filter-today">Due Today</button>
+                    <button id="filter-completed">Completed</button>
+                </div>
+                
+                <ul id="task-list">
+                    </ul>
+            </section>
+        </main>
+    </div>
+
+    <script src="todo.js"></script>
+</body>
+</html>
